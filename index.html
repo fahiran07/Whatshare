@@ -90,12 +90,12 @@ body, html {
     position:fixed;
 }
 #cover-top{
-    height:27%;
+    height:27vh;
     width:100%;
     top:0;
 }
 #cover-bottom{
-    height:44%;
+    height:34vh;
     width:100%;
     bottom:0;
 }
@@ -109,39 +109,23 @@ body, html {
     width:15%;
     left:0;
 }
-@media only screen and (max-width: 360px) {
-    #cover-bottom{
-        height:43%
-    }
-    #cover-top{
-        height:28%
-    }
-}
-@media only screen and (max-width: 360px,max-height:740px) {
-    #cover-bottom{
-        height:47%
-    }
-    #cover-top{
-        height:35%
-    }
-}
-
 #main-cover{
     background:none;
     position:fixed;
     height:100vh;
     width:100vw;
     overflow:hidden;
+    z-index:999;
+}
+iframe {
+  filter: hue-rotate(120deg);
 }
     </style>
   <body>
     <main>
-        <div id="main-cover" disabled>
-            <div id="cover-top" class="covers"></div>
-           <div id="cover-right" class="covers"></div>
-            <div id="cover-left" class="covers"></div>
+        <div id="main-cover">
             <div id="cover-bottom" class="covers"></div>
-        </div>
+        </div>        
   <iframe id="myIframe" src="" frameborder="0" style="height:100vh;width:100vw;"></iframe>
     </main>
 <div class="login d-flex flex-column">
@@ -186,4 +170,5 @@ var loginElement = document.querySelector(".login");
         }
 </script>
 </html>
+
 
