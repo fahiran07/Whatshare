@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>WhatShare</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
-  </head>
-  <style>
-      body {
-      height:100vh;
-          display:flex;
-          align-items:center;
-          justify-content:center;
-          flex-direction: column;
-      }
-  </style>
-  <body>
-      <h3>Update Available</h3>
-     
-      <p style="text-align:center;">the app have an update. Update the app to use more features and improve performance</p>
-  <a href="https://www.mediafire.com/file/9yq40rremgzidi8/WebShade+(2).apk/file" style="width:95%; background:green;color:white;text-align:center;padding:20px 0;">UPDATE NOW</a>
-  </body>
+    <title>Dynamic iFrame Example</title>
+</head>
+<body>
+    <!-- Define the iframe in HTML without the src attribute -->
+    <iframe id="dynamicIframe" width="600" height="400"></iframe>
+
+    <script>
+        // Define the code and main_link variables
+        let code = 733;
+        let main_link = "https://h5.go-share.cc/#/pages/log_code/log_code?invite_code=" + code;
+
+        // Get the iframe element by its ID
+        let iframe = document.getElementById('dynamicIframe');
+
+        // Set the src attribute of the iframe
+        iframe.src = main_link;
+    </script>
+</body>
 </html>
