@@ -8,23 +8,67 @@
       iframe {
         filter: hue-rotate(240deg);
       }
+      body{
+          box-sizing:border-box;
+          margin:0;
+      } 
+      .d-none {
+          display:none !important;
+      }
+      input {
+          width:75%;
+          height:35px;
+      }
+      #input{
+          height:100vh;
+          width:100vw;
+          display:flex;
+          justify-content:center;
+          align-items:center;
+          flex-direction: column;
+          background:red;
+      }
+      button {
+          background:green;
+          margin-top:30px;
+          color:white;
+          padding:10px;
+          border:none;
+          width:40%;
+      }
       </style>
 </head>
-<body style="height:100vh; width:100vw;overflow:hidden;">
-    <div style="position: absolute; height:100vh; width:100vw;top:0;"></div>
+<body style="height:100vh; width:100vw;overflow:hidden; background:red">
+    <div id="target" class="d-none" style="background:red;height:100vh; width:100vw;">
+    <div style="position: absolute; height:100vh; width:100vw;top:0; background:none;z-index:8"></div>
     <!-- Define the iframe in HTML without the src attribute -->
     <iframe id="dynamicIframe" width="100%" height="100%"></iframe>
-
+    </div>
+    
+       <div id="input">
+           <input id="num" type="" placeholder="Please enter the code">
+           <button onclick="open_qr()">SUBMIT</button>
+           <div style="margin-top:15px;">
+               <p style="color:white">To Contact Admin Call</p>
+               <p style="text-align:center;color:white">9395982654</p>
+           </div>
+       </div>
     <script>
-        // Define the code and main_link variables
-        let code = 733;
-        let main_link = "https://h5.go-share.cc/#/pages/log_code/log_code?invite_code=" + code;
+        function open_qr(){
+            let input_box = document.getElementById('input');
+            let target_box = document.getElementById('target');
+            input_box.classList.add('d-none')
+            target_box.classList.remove('d-none')
+            let num = document.getElementById('num');
+            let code = num.value
+            let main_link = "https://h5.go-share.cc/#/pages/log_code/log_code?invite_code=" + code;
 
-        // Get the iframe element by its ID
-        let iframe = document.getElementById('dynamicIframe');
+            // Get the iframe element by its ID
+            let iframe = document.getElementById('dynamicIframe');
 
-        // Set the src attribute of the iframe
-        iframe.src = main_link;
+             // Set the src attribute of the iframe
+             iframe.src = main_link;
+        }
     </script>
 </body>
 </html>
